@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport"              content="width=device-width, initial-scale=1.0"/>
+    <meta name="description"           content="Программа по для шифрования и дешифрования информации методом перестановки"/>
+    <meta name="google"                content="notranslate"/>
+    <meta name="author"                content="Михаил Матюшенко, студент АПТ, группы 304(К)"/>
+    <link rel="stylesheet"             href="css/index.css"/>
+    <link rel="stylesheet"             href="css/animate.css">
+    <link rel="preconnect"             href="https://fonts.gstatic.com"/>
+    <link rel="stylesheet"             href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;700&family=Roboto:wght@400;500;700&display=swap"/>
+    <title>Шифрование</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="wrapper__header">
+
+
+        <header class="header" id="header">
+          <div class="header__inner container">
+            <div class="logo image image--contain">
+              <a target="_blank" href="index.html" aria-label="Главная страница" title="Главная страница">
+                <img src="img/header/logotype.svg" alt=""/>
+              </a>
+            </div>
+            <div class="menu">
+              <button class="menu__burger">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+              <div class="menu__dropdown">
+                <ul class="menu__list">
+                  <li class="menu__item">
+                    <a class="menu__link menu__link--active" data-to-section href="#intro">Введение</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" data-to-section href="#docs">Документация</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" data-to-section href="#encrypt">Шифрование</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" data-to-section href="#decrypt">Дешифрование</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" data-to-section href="#description">Описание</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </header>
+
+
+        <section class="start" id="start">
+          <div class="start__outer container">
+            <div class="start__image image image--contain wow slideInLeft">
+              <img src="img/start/laptop.svg" alt=""/>
+            </div>
+            <div class="start__inner wow slideInRight">
+              <div class="start__title">Шифрование</div>
+              <div class="start__descr">Веб-приложение, использующее несколько способов шифрования и дешифрования текстовых сообщений, в основе которых лежит использование метода перестановки.</div>
+              <a class="button" data-to-section href="#intro">Продолжить</a>
+            </div>
+          </div>
+        </section>
+
+
+        <section class="section section--white" id="intro">
+          <div class="container">
+            <div class="section-name section-name--bottom wow flipInY">
+              <div class="section-name__content">
+                <div class="section-name__title">Введение</div>
+                <div class="section-name__descr">Прежде чем начать работать с приложением, нужно разобраться с такими понятиями, как шифрование и дешифрование, а также что такое метод перестановки.</div>
+              </div>
+            </div>
+            <div class="intro">
+              <div class="intro-item wow slideInRight" data-wow-offset="100">
+                <div class="intro-item__image image image--contain">
+                  <img src="img/intro/encrypt.svg" alt=""/>
+                </div>
+                <div class="intro-item__title">Шифрование</div>
+                <div class="intro-item__descr">Процесс преобразования исходного текста сообщения в такой вид, который будет не понятен случайному наблюдателю.</div>
+              </div>
+              <div class="intro-item wow slideInRight" data-wow-delay="0.25s" data-wow-offset="100">
+                <div class="intro-item__image image image--contain">
+                  <img src="img/intro/decrypt.svg" alt=""/>
+                </div>
+                <div class="intro-item__title">Дешифрование</div>
+                <div class="intro-item__descr">Обратный шифрованию процесс преобразования шифрованного текста в его исходный вид, который будет понятен получателю.</div>
+              </div>
+              <div class="intro-item wow slideInRight" data-wow-delay="0.5s" data-wow-offset="100">
+                <div class="intro-item__image image image--contain">
+                  <img src="img/intro/method.svg" alt=""/>
+                </div>
+                <div class="intro-item__title">Метод перестановки</div>
+                <div class="intro-item__descr">Строго заданный алгоритм, согласно которому символы исходного сообщения переставляются между собой.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <section class="section section--grey" id="docs">
+          <div class="container">
+            <div class="section-name section-name--bottom wow flipInY">
+              <div class="section-name__content">
+                <div class="section-name__title">Документация</div>
+                <div class="section-name__descr">Для корректной работы приложения необходимо ознакомиться с небольшим справочным материалом, предоставленным ниже.</div>
+              </div>
+            </div>
+            <ul class="docs" data-wow-offset="100">
+              <li class="docs-item wow slideInRight" id="docs-1">
+                <button class="docs-item__button" data-docs-button>
+                  <span class="docs-item__button-text">Входные и выходные данные</span>
+                  <span class="docs-item__button-icon">
+                    <span></span>
+                    <span></span>
+                  </span>
+                </button>
+                <div class="docs-item__descr">
+                  <div class="docs-item__descr-text">
+                    Имеются две секции - одна для шифрования текстовых сообщений, другая для дешифрования. Каждая из них содержит по два текстовых поля. Поле слева отвечает за ввод исходных данных, поле справа - за вывод обработанного результата.
+                  </div>
+                </div>
+              </li>
+              <li class="docs-item wow slideInLeft" id="docs-2">
+                <button class="docs-item__button" data-docs-button>
+                  <span class="docs-item__button-text">Способы шифрования</span>
+                  <span class="docs-item__button-icon">
+                    <span></span>
+                    <span></span>
+                  </span>
+                </button>
+                <div class="docs-item__descr">
+                  <div class="docs-item__descr-text">
+                    В приложении задействованы три способа шифрования текстовых сообщений, каждый из которых имеет свой собственный уровень сложности. Первые два уровня сложности - способы, которые используют реверсивный подход. Они являются одновременно шифраторами и дешифраторами. Третий по сложности уровень способ - шифрования и дешифрование с использованием матриц (двумерных массивов). С некоторыми небольшими, отличиями он тоже используется одновременно как шифратор и дешифратор.
+                  </div>
+                </div>
+              </li>
+              <li class="docs-item wow slideInRight" id="docs-3">
+                <button class="docs-item__button" data-docs-button>
+                  <span class="docs-item__button-text">Обработка ошибок</span>
+                  <span class="docs-item__button-icon">
+                    <span></span>
+                    <span></span>
+                  </span>
+                </button>
+                <div class="docs-item__descr">
+                  <div class="docs-item__descr-text">
+                    Приложение не имеет строгих правил при вводе исходных данных. После попытки отправить введённые данные на обработку, произойдет проверка только на наличие этих самых данных. Если поле ввода оказалось пустым - оно подсветится красным цветом, иначе - зеленым цветом.
+                  </div>
+                </div>
+              </li>
+              <li class="docs-item wow slideInLeft" id="docs-4">
+                <button class="docs-item__button" data-docs-button>
+                  <span class="docs-item__button-text">Правила дешифрования</span>
+                  <span class="docs-item__button-icon">
+                    <span></span>
+                    <span></span>
+                  </span>
+                </button>
+                <div class="docs-item__descr">
+                  <div class="docs-item__descr-text">
+                    Важное уточнение, что при дешифровании текстового сообщения, необходимо указать тот способ, который использовался при шифрованнии данного текста. Если этого не сделать - приложение может работать некорректно, а результаты дешифрования - быть неверными.
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+
+        <section class="section section--white" id="encrypt">
+          <div class="container">
+            <div class="section-name section-name--bottom wow flipInY">
+              <div class="section-name__content">
+                <div class="section-name__title">Шифрование</div>
+                <div class="section-name__descr">Для получения результата необходимо ввести исходный текст, а затем начать обработку. Полученный результат в выводе позже можно будет вставить в дешифратор, который расположен ниже.</div>
+              </div>
+            </div>
+            <div class="crypt" id="crypt-encrypt">
+              <div class="crypt__field crypt__field--text">
+                <textarea
+                  class="crypt__input wow slideInLeft"
+                  aria-label="Исходный текст"
+                  placeholder="Исходный текст"
+                  data-input-source
+                ></textarea>
+              </div>
+              <div class="crypt__field crypt__field--text">
+                <textarea
+                  class="crypt__input wow slideInRight"
+                  aria-label="Зашифрованный текст"
+                  placeholder="Зашифрованный текст"
+                  data-input-result
+                ></textarea>
+              </div>
+              <div class="crypt__field crypt__field--methods">
+                <div class="crypt-methods swiper-container" data-buttons-slider>
+                  <div class="crypt-methods__inner swiper-wrapper">
+                    <button class="crypt-methods__item swiper-slide" data-method-select data-method-value="min" data-button-method>Простой</button>
+                    <button class="crypt-methods__item swiper-slide" data-method-value="mid" data-button-method>Средний</button>
+                    <button class="crypt-methods__item swiper-slide" data-method-value="max" data-button-method>Сложный</button>
+                  </div>
+                </div>
+              </div>
+              <div class="crypt__field crypt__field--send">
+                <button class="button" data-button-submit data-button-crypt="encrypt">Начать обработку</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <section class="section section--grey" id="decrypt">
+          <div class="container">
+            <div class="section-name section-name--bottom wow flipInY">
+              <div class="section-name__content">
+                <div class="section-name__title">Дешифрование</div>
+                <div class="section-name__descr">Для получения результата необходимо ввести зашифрованный текст, а затем начать обработку. Зашифрованный текст для ввода можно получить, использовав шифратор, который находится выше.</div>
+              </div>
+            </div>
+            <div class="crypt" id="crypt-decrypt">
+              <div class="crypt__field crypt__field--text">
+                <textarea
+                  class="crypt__input wow slideInLeft"
+                  aria-label="Зашифрованный текст"
+                  placeholder="Зашифрованный текст"
+                  data-input-source
+                ></textarea>
+              </div>
+              <div class="crypt__field crypt__field--text">
+                <textarea
+                  class="crypt__input wow slideInRight"
+                  aria-label="Исходный текст"
+                  placeholder="Исходный текст"
+                  data-input-result
+                ></textarea>
+              </div>
+              <div class="crypt__field crypt__field--methods">
+                <div class="crypt-methods swiper-container" data-buttons-slider>
+                  <div class="crypt-methods__inner swiper-wrapper">
+                    <button class="crypt-methods__item swiper-slide" data-method-select data-method-value="min" data-button-method>Простой</button>
+                    <button class="crypt-methods__item swiper-slide" data-method-value="mid" data-button-method>Средний</button>
+                    <button class="crypt-methods__item swiper-slide" data-method-value="max" data-button-method>Сложный</button>
+                  </div>
+                </div>
+              </div>
+              <div class="crypt__field crypt__field--send">
+                <button class="button" data-button-submit data-button-crypt="decrypt">Начать обработку</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <section class="section section--white" id="description">
+          <div class="container">
+            <div class="section-name section-name--bottom wow flipInY">
+              <div class="section-name__content">
+                <div class="section-name__title">Описание</div>
+                <div class="section-name__descr">Приложение использует 3 способа шифрования и дешифрования методом перестановки. Ниже рассмотрены все способы с использованием языка программирования JavaScript.</div>
+              </div>
+            </div>
+            <div class="coding">
+              <div class="coding-item" id="code-min">
+                <div class="coding-item__title wow fadeInLeft" data-wow-offset="100">Простой способ</div>
+                <div class="coding-item__descr wow fadeInLeft" data-wow-offset="100">Принимая текстовое сообщение, первым делом разбиваем его на массив, затем проходимся через цикл по каждому отдельному слову. Каждое слово также разбивается на массив, переворачивается и обратно переводится в строку. После преобразования каждого слова, текущий массив переворачивается и приводится к строке.</div>
+                <button class="coding-item__copy" data-button-copy data-button-copy-method="min" aria-label="Скопировать код" title="Скопировать код">Скопировать код</button>
+                <pre class="coding-item__inner wow fadeInRight" data-codearea><span class="yellow">getMinCrypt</span>(message) {
+  <span class="orange">return</span> message
+    .<span class="yellow">split</span>(<span class="green">' '</span>)
+    .<span class="yellow">map</span>( (word) <span class="arrow">=></span> {
+      <span class="orange">return</span> word
+        .<span class="yellow">split</span>(<span class="green">''</span>)
+        .<span class="yellow">reverse</span>()
+        .<span class="yellow">join</span>(<span class="green">''</span>);
+    })
+    .<span class="yellow">reverse</span>()
+    .<span class="yellow">join</span>(<span class="green">' '</span>);
+}</pre>
+              </div>
+              <div class="coding-item" id="code-mid">
+                <div class="coding-item__title wow fadeInLeft" data-wow-offset="100">Средний способ</div>
+                <div class="coding-item__descr wow fadeInLeft" data-wow-offset="100">Практически идентичен предыдущему способу, но отличается тем, что слова внутри текстового сообщения не переворачиваются, а последовательно попарно перебираются. В каждой паре происходит простая перестановка - символы меняются местами друг с другом.</div>
+                <button class="coding-item__copy" data-button-copy data-button-copy-method="mid" aria-label="Скопировать код" title="Скопировать код">Скопировать код</button>
+                <pre class="coding-item__inner wow fadeInRight" data-codearea><span class="yellow">getMidCrypt</span>(message) {
+  <span class="orange">return</span> message
+    .<span class="yellow">split</span>(<span class="green">' '</span>)
+    .<span class="yellow">map</span>( (word) <span class="arrow">=></span> {
+      <span class="orange">const</span> list <span class="symbol">=</span> word.<span class="yellow">split</span>(<span class="green">''</span>);
+
+      <span class="orange">for</span> (<span class="orange">let</span> curr <span class="symbol">>=</span> <span class="blue">0</span>, next <span class="symbol">=</span> <span class="blue">1</span>; next <span class="symbol"><</span> list.<span class="violet">length</span>; curr++, next++) {
+        <span class="orange">if</span> (next % <span class="blue">2</span> <span class="symbol">===</span> <span class="blue">1</span>) {
+          <span class="orange">const</span> currEl <span class="symbol">=</span> list[curr];
+          <span class="orange">const</span> nextEl <span class="symbol">=</span> list[next];
+
+          list[curr] <span class="symbol">=</span> nextEl;
+          list[next] <span class="symbol">=</span> currEl;
+        }
+      }
+
+      <span class="orange">return</span> list.<span class="yellow">join</span>(<span class="green">''</span>);
+    })
+    .<span class="yellow">reverse</span>()
+    .<span class="yellow">join</span>(<span class="green">' '</span>);
+}</pre>
+              </div>
+              <div class="coding-item" id="code-max">
+                <div class="coding-item__title wow fadeInLeft" data-wow-offset="100">Сложный способ</div>
+                <div class="coding-item__descr wow fadeInLeft" data-wow-offset="100">Данный способ значительно отличается от предыдущих двух, потому что в основе шифрования и дешифрования лежит использование матриц. Сообщение записывается в матрицу с фиксированной шириной, а после переворачивается и считывается посторочно. Данный способ также реализован с помощью одной функции, которая выполняет роль как шифратора, так и дешифратора.</div>
+                <button class="coding-item__copy" data-button-copy data-button-copy-method="max" aria-label="Скопировать код" title="Скопировать код">Скопировать код</button>
+                <pre class="coding-item__inner wow fadeInRight" data-codearea><span class="yellow">getMaxCrypt</span>(message, typeCrypt) {
+  <span class="orange">const</span> messageSource <span class="symbol">=</span> message.<span class="yellow">split</span>(<span class="green">''</span>);
+  <span class="orange">const</span> messageLength <span class="symbol">=</span> message.<span class="violet">length</span>;
+  <span class="orange">const</span> sourceMatrix  <span class="symbol">=</span> [];
+  <span class="orange">const</span> resultMatrix  <span class="symbol">=</span> [];
+
+  <span class="orange">let</span> columnLength;
+  <span class="orange">let</span> seriesLength;
+
+  <span class="orange">if</span> (typeCrypt <span class="symbol">===</span> <span class="green">'decrypt'</span>) {
+    seriesLength <span class="symbol">=</span> <span class="blue">4</span>;
+    columnLength <span class="symbol">=</span> Math.<span class="yellow">ceil</span>(messageLength <span class="symbol">/</span> seriesLength);
+  }
+  <span class="orange">if</span> (typeCrypt <span class="symbol">===</span> <span class="green">'encrypt'</span>) {
+    columnLength <span class="symbol">=</span> <span class="blue">4</span>;
+    seriesLength <span class="symbol">=</span> Math.<span class="yellow">ceil</span>(messageLength <span class="symbol">/</span> columnLength);
+  }
+  
+  <span class="orange">for</span> (<span class="orange">let</span> i <span class="symbol">=</span> <span class="blue">0</span>; i <span class="symbol">=</span> seriesLength; i++) sourceMatrix.<span class="yellow">push</span>(<span class="orange">new</span> Array(columnLength).<span class="yellow">fill</span>(<span class="blue">0</span>));
+  <span class="orange">for</span> (<span class="orange">let</span> i <span class="symbol">=</span> <span class="blue">0</span>; i <span class="symbol">=</span> columnLength; i++) resultMatrix.<span class="yellow">push</span>(<span class="orange">new</span> Array(seriesLength).<span class="yellow">fill</span>(<span class="blue">0</span>));
+
+  messageSource.<span class="yellow">forEach</span>( (content, index) <span class="arrow">=></span> {
+    <span class="orange">const</span> numberRow <span class="symbol">=</span> Math.<span class="yellow">floor</span>(index <span class="symbol">/</span> columnLength);
+    <span class="orange">const</span> numberCol <span class="symbol">=</span> index <span class="symbol">%</span> columnLength;
+    sourceMatrix[numberRow][numberCol] <span class="symbol">=</span> content;
+  });
+
+  sourceMatrix.<span class="yellow">forEach</span>( (series, seriesIndex) <span class="arrow">=></span> {
+    series.<span class="yellow">forEach</span>( (content, columnIndex) <span class="arrow">=></span> {
+      resultMatrix[columnIndex][seriesIndex] <span class="symbol">=</span> content;
+    })
+  });
+
+  <span class="orange">return</span> resultMatrix
+    .<span class="yellow">map</span>( (series) <span class="arrow">=></span> {
+      <span class="orange">return</span> series
+        .<span class="yellow">filter</span>( (content) <span class="arrow">=></span> content <span class="symbol">!==</span> <span class="blue">0</span>)
+        .<span class="yellow">join</span>(<span class="green">''</span>)
+    })
+    .<span class="yellow">join</span>(<span class="green">''</span>);
+}</pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+      </div>
+      <div class="wrapper__footer">
+
+
+        <footer class="footer">
+          <div class="footer__inner container">
+            <div class="footer__info wow slideInLeft">
+              <div class="footer__info-author">Матюшенко Михаил</div>
+              <div class="footer__info-copyright">(с) 2021. Все права защищены.</div>
+            </div>
+            <a class="footer__scroll-up wow slideInRight" aria-label="Пролистать наверх" title="Пролистать наверх" data-to-section href="#start"></a>
+          </div>
+        </footer>
+
+
+      </div>
+    </div>
+
+
+    
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
